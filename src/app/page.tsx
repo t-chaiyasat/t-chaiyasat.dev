@@ -21,7 +21,7 @@ export default function HomePage() {
           <small className="fw-bold">{metaContent.tag}</small>
           <h1 className="pb-3">{metaContent.title}</h1>
           <a className="btn btn-outline__theme fw-bold" href="#">Coming Soon</a>
-          <div className="d-flex justify-content-center mt-5">
+          <div className="d-flex justify-content-end mt-5">
             <small className="fw-bold">&#x1F4E6; {metaContent.version}</small>
           </div>
         </div>
