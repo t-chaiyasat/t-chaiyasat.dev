@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.scss';
 /* UI | Optimized Fonts */
 import { roboto, nunito } from './fonts';
+import Navigation from './ui/navigation';
 
 /* MetaData Tags | Search Engine Optimization */
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${nunito.variable}`}>
+        <Navigation />
         {children}
       </body>
     </html>
