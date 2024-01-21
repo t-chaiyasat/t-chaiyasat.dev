@@ -1,0 +1,51 @@
+/* Import Bootstrap Source SASS Files */
+@import '~bootstrap/scss/bootstrap';
+/* Custom Re-Usable CSS Functions */
+@import './mixins';
+/* Module Styling Components */
+@import './module';
+
+/* HTML ROOT */
+html {
+  --bg-light-mode: #F8F9FA;
+  --bg-dark-mode:  #000000;
+  --txt-light-mode:#000000;
+  --txt-dark-mode: #F8F9FA;
+  --tint:          #0077FF;
+  --txt-secondary: #A8AAAC;
+  --txt-secondary-p: #EAEAEA;
+  &[data-theme='dark'] {
+      --bg-light-mode: #000000;
+      --bg-dark-mode:  #F8F9FA;
+      --txt-light-mode:#F8F9FA;
+      --txt-dark-mode: #000000;
+      --txt-secondary: #575A5E;
+      --txt-secondary-p: #1E1E1E;
+  } &.transition, .transition *, .transition *::before, .transition*::after {
+      transition: all 750ms !important;
+      transition-delay: 0 !important;
+  }
+  font-family: var(--font-nunito);
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-roboto); }
+  h1 { @include responsive_h1_fontsize; }
+  body {
+    background-color: var(--bg-dark-mode);
+    h1, h2, h3, h4, h5, h6, p, small, span, hr, ol, li, time { 
+      color: var(--txt-dark-mode); 
+    }
+  }
+}
+
+/* Bootstrap Sass Variables */
+$breadcrumb-divider-color: var(--txt-light-mode);
+$breadcrumb-active-color: var(--txt-secondary);
+// $breadcrumb-divider: quote(">");
+
+/* Global Theme Preference: Dark */
+@media (prefers-color-scheme: dark) {
+  html { color-scheme: dark; }
+  body {
+    background: black;
+    color: white;
+  }
+}
